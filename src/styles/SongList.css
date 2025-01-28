@@ -1,49 +1,121 @@
-/* Container for the song list */
 .song-list-container {
-    width: 80%;
-    max-width: 1000px;
-    margin-top: 100px;
-    /* Add some space from the top */
-    padding: 20px;
+    width: 60vh;
+    /* Fixed width */
+    height: 95%;
+    /* Full height of the viewport */
+    position: absolute;
+    left: 400px;
+    /* Adjust position */
+    top: 50%;
+    /* Vertically centers the container */
+    transform: translateY(-50%);
+    /* Adjusts the position to ensure it's perfectly centered */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    gap: 12px;
+    /* Adds space between song items */
+    padding: 10px;
+    overflow-y: auto;
+    border-radius: 1%;
+    /* Enables scrolling if content overflows */
+    background-color: rgba(255, 255, 255, 0.05);
+    /* Light semi-transparent background */
+    /* box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5); */
+    /* Subtle shadow for depth */
 }
 
-/* Song item layout */
+
+/* Individual song item styles */
 .song-item {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
     cursor: pointer;
-    padding: 10px;
-    transition: transform 0.2s ease-in-out;
-    width: 100%;
-    border-bottom: 1px solid #ddd;
+    padding: 12px;
+    width: 90%;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out, background 0.3s ease-in-out;
+    /* Smooth transition for hover effects */
 }
 
-/* Song item hover effect */
 .song-item:hover {
     transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.2);
+    /* Slight highlight on hover */
 }
 
-/* Song cover image */
-.song-item img {
-    width: 100px;
-    height: 100px;
-    margin-right: 15px;
-    border-radius: 8px;
+/* Song image styling */
+.song-image {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+    /* Ensures images maintain aspect ratio */
+    margin-right: 12px;
 }
 
-/* Text within song item */
-.song-item div {
+/* Song details container */
+.song-details {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
 }
 
-/* Duration text styling */
-.duration {
+/* Song title and artist text */
+.song-item p {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    margin: 0;
+    text-align: left;
+}
+
+/* Style for song name */
+.song-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    /* Slightly more spaced letters for elegance */
+}
+
+/* Style for artist name */
+.song-artist {
     font-size: 14px;
-    color: #aaa;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.3px;
+    /* Slight letter spacing */
+}
+
+/* Style for song duration */
+.song-duration {
+    font-size: 14px;
+    color: #fff;
+    font-weight: 400;
+    margin-left: auto;
+    /* Push the duration to the right */
+}
+
+.song-name,
+.song-artist,
+.song-duration {
+    font-family: 'Arial', sans-serif;
+    /* Sans-serif font for clarity */
+}
+
+/* Scrollbar customization for better UX */
+.song-list-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.song-list-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+.song-list-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
 }

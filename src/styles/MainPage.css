@@ -1,41 +1,47 @@
-/* Reset margin and padding to avoid unwanted space */
-body,
-html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
+/* MainPage.css */
 
-/* Main container for the page */
-div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    /* Align from top */
+/* Main container styling */
+.main-container {
     height: 100vh;
     /* Full height of the viewport */
     transition: background-color 0.5s ease;
-    /* Smooth transition for background color */
+    /* Smooth transition for color change */
+    margin: 0;
+    /* Remove default margin */
+    padding: 0;
+    /* Remove any padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Align content to the top */
 }
 
-/* Header styles */
-header {
+/* Header styling */
+.header {
     padding: 10px;
-    position: absolute;
     display: flex;
     align-items: center;
     gap: 3px;
-    top: 10px;
-    left: 20px;
 }
 
-/* Spotify name text style */
-header span {
+/* Spotify icon styling */
+.spotify-icon {
+    width: 90px;
+    height: 30px;
+}
+
+/* Spotify text styling */
+.spotify-text {
     font-size: 20px;
     color: #fff;
     margin-left: -25px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
+    /* Close match to Spotify's font */
     font-weight: bold;
     letter-spacing: 0.5px;
+}
+
+/* Sup tag styling for Spotify® */
+.spotify-sup {
+    font-size: 10px;
 }
