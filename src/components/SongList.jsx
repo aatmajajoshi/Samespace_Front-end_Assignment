@@ -100,7 +100,7 @@ function SongList({ songs, onSongClick }) {
         filteredSongs.map((song) => (
           <div
             key={song.id}
-            onClick={() => onSongClick(song.accent)}
+            onClick={() => onSongClick(song)}
             className="song-item"
           >
             <img

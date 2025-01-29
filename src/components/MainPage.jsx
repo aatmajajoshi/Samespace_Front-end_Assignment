@@ -1,14 +1,17 @@
 import { useState } from "react";
 import { SiSpotify } from "react-icons/si"; // Importing Spotify icon
-import SongList from "./SongList"; // Import the SongList component
+import SongList from "../components/SongList"; // Import the SongList component
+import MainSong from "../components/MainSong";
 import "../styles/MainPage.css"; // Import the CSS file
 
 function MainPage({ songs }) {
   const [backgroundColor, setBackgroundColor] = useState("#000"); // Default background color
+  const [selectedSong, setSelectedSong] = useState(null); // State to store selected song data
 
   // Function to handle background color change on song click
-  const handleSongClick = (accentColor) => {
-    setBackgroundColor(accentColor); // Update background color dynamically
+  const handleSongClick = (song) => {
+    setBackgroundColor(song.accent); // Update background color dynamically
+    setSelectedSong(song);
   };
 
   return (
@@ -28,6 +31,7 @@ function MainPage({ songs }) {
 
       {/* Pass the handleSongClick function to SongList component */}
       <SongList songs={songs} onSongClick={handleSongClick} />
+      {selectedSong && <MainSong song={selectedSong} />}
     </div>
   );
 }

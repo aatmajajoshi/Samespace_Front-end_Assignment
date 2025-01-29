@@ -4,7 +4,7 @@
     height: 95%;
     /* Full height of the viewport */
     position: absolute;
-    left: 400px;
+    left: 300px;
     /* Adjust position */
     top: 50%;
     /* Vertically centers the container */
@@ -166,6 +166,7 @@
 .search-container {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     width: 90%;
     background: rgba(255, 255, 255, 0.1);
     /* Transparent background */
