@@ -101,7 +101,8 @@
 
 .song-name,
 .song-artist,
-.song-duration {
+.song-duration,
+.section-heading {
     font-family: 'Arial', sans-serif;
     /* Sans-serif font for clarity */
 }
@@ -119,3 +120,107 @@
 .song-list-container::-webkit-scrollbar-track {
     background: rgba(255, 255, 255, 0.1);
 }
+
+.headings-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    width: 100%;
+    padding: 10px 15px;
+}
+
+.section-heading {
+    /* color: white;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease; */
+    color: rgba(255, 255, 255, 0.5);
+    /* Default transparent white */
+    font-size: 22px;
+    font-weight: 550;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.section-heading.active {
+    /* color: #1DB954; */
+    color: #fff;
+    /* Highlight the active section */
+}
+
+.section-heading:hover {
+    /* color: #1DB954; */
+    color: #fff;
+}
+
+.no-songs-message {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Search container */
+.search-container {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    background: rgba(255, 255, 255, 0.1);
+    /* Transparent background */
+    border-radius: 5px;
+    padding: 8px 12px;
+    margin-bottom: 12px;
+    position: relative;
+}
+
+/* Search input field */
+.search-bar {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 16px;
+    padding: 5px;
+}
+
+/* Placeholder styling */
+.search-bar::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+}
+
+/* Magnifying glass icon */
+.search-icon {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.clear-icon {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Fade & Scale Animation */
+
+/* Base styles for icons */
+.search-icon,
+.clear-icon {
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Fade in when visible */
+.fade-in {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Fade out when hidden */
+.fade-out {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
