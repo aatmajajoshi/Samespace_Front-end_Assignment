@@ -18,11 +18,11 @@
     padding: 10px;
     overflow-y: auto;
     border-radius: 1%;
-    /* Enables scrolling if content overflows */
-    background-color: rgba(255, 255, 255, 0.05);
-    /* Light semi-transparent background */
-    /* box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5); */
-    /* Subtle shadow for depth */
+
+    /* background-color: rgba(255, 255, 255, 0.05);
+    Light semi-transparent background
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5);
+    Subtle shadow for depth */
 }
 
 
@@ -198,7 +198,7 @@
     color: rgba(255, 255, 255, 0.5);
     font-size: 25px;
     cursor: pointer;
-    
+
 }
 
 .clear-icon {

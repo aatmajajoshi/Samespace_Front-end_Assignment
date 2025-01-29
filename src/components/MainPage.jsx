@@ -5,7 +5,7 @@ import MainSong from "../components/MainSong";
 import "../styles/MainPage.css"; // Import the CSS file
 
 function MainPage({ songs }) {
-  const [backgroundColor, setBackgroundColor] = useState("#000"); // Default background color
+  const [backgroundColor, setBackgroundColor] = useState("#0f0f0f"); // Default background color
   const [selectedSong, setSelectedSong] = useState(null); // State to store selected song data
 
   // Function to handle background color change on song click
@@ -30,8 +30,12 @@ function MainPage({ songs }) {
       </header>
 
       {/* Pass the handleSongClick function to SongList component */}
-      <SongList songs={songs} onSongClick={handleSongClick} />
-      {selectedSong && <MainSong song={selectedSong} />}
+      {/* <SongList songs={songs} onSongClick={handleSongClick} />
+      {selectedSong && <MainSong song={selectedSong} />} */}
+      <div className="main-content-container">
+        <SongList songs={songs} onSongClick={handleSongClick} />
+        {selectedSong && <MainSong song={selectedSong} />}
+      </div>
     </div>
   );
 }

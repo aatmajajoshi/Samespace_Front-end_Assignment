@@ -12,7 +12,10 @@
     /* Remove any padding */
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
+    justify-content: space-between;
+    align-items: flex-start;
+    /* margin-top: -20px; */
     /* Align content to the top */
 }
 
@@ -28,6 +31,7 @@
 .spotify-icon {
     width: 90px;
     height: 30px;
+    margin-top: 20px;
 }
 
 /* Spotify text styling */
@@ -39,6 +43,7 @@
     /* Close match to Spotify's font */
     font-weight: bold;
     letter-spacing: 0.5px;
+    margin-top: 20px;
 }
 
 /* Sup tag styling for Spotify® */
