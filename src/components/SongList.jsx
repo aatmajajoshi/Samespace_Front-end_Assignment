@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import "../styles/SongList.css"; // Import the CSS for SongList
-import { FaSearch, FaTimes } from "react-icons/fa"; // Import cross icon
+import { FaTimes } from "react-icons/fa"; // Import cross icon
+import { FiSearch } from "react-icons/fi";
 
 function SongList({ songs, onSongClick }) {
   const [durations, setDurations] = useState({});
@@ -87,7 +88,7 @@ function SongList({ songs, onSongClick }) {
         {searchQuery ? (
           <FaTimes className="clear-icon fade-in" onClick={handleClearSearch} />
         ) : (
-          <FaSearch
+          <FiSearch
             className="search-icon fade-in"
             onClick={handleSearchIconClick}
           />
