@@ -2,6 +2,9 @@ import React, { useState, useEffect, useRef } from "react";
 import "../styles/MainSong.css";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css"; // Import default styles
+// import { PiDotsThreeCircleFill } from "react-icons/pi";
+// import { PiDotsThreeCircleFill } from "react-icons/pi";
+import { BiDotsHorizontalRounded } from "react-icons/bi";
 
 function MainSong({ song }) {
   const [currentTime, setCurrentTime] = useState(0);
@@ -31,15 +34,30 @@ function MainSong({ song }) {
             </div>
 
             {/* Custom Audio Player */}
-            <div className="audio-player-class">
-            {/* <button className="rhap_menu-button"></button> Menu Button */}
+            {/* <div className="audio-player-class">
+              <PiDotsThreeCircleFill className="menu-icon" />
+              
               <AudioPlayer
                 ref={audioRef}
                 src={song.url}
                 onListen={(e) => setCurrentTime(e.target.currentTime)}
                 volume={0.5}
                 showTime={false} // Hide the time display
-                // customProgressBar={true} // Enable custom progress bar
+                showLoopControl={false} // Disable loop button
+                loop={false} // Ensure loop is disabled
+                controls
+              />
+            </div> */}
+            <div className="audio-player-class">
+              <div className="menu-icon-wrapper">
+                <BiDotsHorizontalRounded className="menu-icon" />
+              </div>
+              <AudioPlayer
+                ref={audioRef}
+                src={song.url}
+                onListen={(e) => setCurrentTime(e.target.currentTime)}
+                volume={0.5}
+                showTime={false} // Hide the time display
                 showLoopControl={false} // Disable loop button
                 loop={false} // Ensure loop is disabled
                 controls
