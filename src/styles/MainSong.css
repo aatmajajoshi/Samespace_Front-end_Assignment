@@ -90,6 +90,7 @@
 .rhap_rewind-button {
   color: rgba(255, 255, 255, 0.3) !important;
 }
+
 .rhap_forward-button {
   color: rgba(255, 255, 255, 0.3) !important;
 }
@@ -97,7 +98,7 @@
 /* Volume bar styling */
 .rhap_volume-bar {
   background-color: white !important;
-  
+
   /* Lighter volume bar */
 }
 
@@ -106,15 +107,25 @@
 .rhap_volume-button {
   color: white !important;
   background: rgba(255, 255, 255, 0.3) !important;
-  /* padding: 5px !important; */
-  /* width: 35px !important; */
-  /* height: 35px !important; */
-  border-radius: 50%;
-  font-size: 20px !important;
-  /* align-items: center !important; */
-  /* top: 40px !important; */
+  padding: 4px !important;
 
+  border-radius: 50%;
+  font-size: 70px !important;
+
+  display: flex !important;
+  /* Enables flexbox */
+  align-items: center !important;
+  /* Centers content vertically */
+  justify-content: center !important;
+  /* Centers content horizontally */
 }
+
+.rhap_volume-button svg {
+  width: 50px !important;
+  height: 50px !important;
+}
+
+
 
 .rhap_volume-button:hover {
   color: rgba(255, 255, 255, 0.8) !important;
@@ -125,7 +136,8 @@
 /* Styling the audio seeker to take the full width */
 .rhap_progress-bar {
   width: 100% !important;
-  background: white !important;
+  background: rgba(255, 255, 255, 0.3) !important;
+
   /* Lighter background for progress bar */
 }
 
@@ -220,4 +232,14 @@
   /* Remove any padding */
   display: inline-block;
   /* Align with other elements */
+}
+
+.rhap_progress-filled {
+  background-color: white !important;
+
+}
+
+.rhap_download-progress {
+  background: rgba(200, 200, 200, 0.3) !important;
+
 }
