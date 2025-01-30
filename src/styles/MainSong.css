@@ -1,14 +1,18 @@
 .main-song-wrapper-unique {
   max-width: 650px;
-  height: auto;
+  height: 85vh;
   border-radius: 15px;
   overflow: hidden;
   margin-left: 930px;
-  align-self: flex-start;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 10px;
+}
+
+.main-song-wrapper-unique {
+  position: relative;
+  top: -30px;
+  /* Adjust this value as needed */
 }
 
 .main-song-container-unique {
@@ -88,16 +92,22 @@
 }
 
 .rhap_rewind-button {
-  color: rgba(255, 255, 255, 0.3) !important;
+  color: rgba(255, 255, 255, 0.7) !important;
 }
 
 .rhap_forward-button {
-  color: rgba(255, 255, 255, 0.3) !important;
+  color: rgba(255, 255, 255, 0.7) !important;
 }
 
 /* Volume bar styling */
 .rhap_volume-bar {
-  background-color: white !important;
+  /* background-color: white !important; */
+
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  /* Gray background for the volume bar */
+  height: 5px !important;
+  /* Adjust height if needed */
+  border-radius: 5px !important;
 
   /* Lighter volume bar */
 }
@@ -182,13 +192,14 @@
   width: 10px !important;
   height: 10px !important;
   /* display: none !important; */
-  background: white;
+  background: white !important;
+  top: -2px !important;
 }
 
 .rhap_progress-container {
   margin-left: 0px !important;
   width: 100%;
-  margin: -10px;
+  /* margin: -100px; */
 }
 
 .rhap_main-controls {

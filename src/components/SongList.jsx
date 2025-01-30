@@ -9,6 +9,7 @@ function SongList({ songs, onSongClick }) {
   const [searchQuery, setSearchQuery] = useState(""); // Search bar state
   const [showSearchIcon, setShowSearchIcon] = useState(true); // For managing search icon visibility
   const searchInputRef = useRef(null); // Reference to the search input element
+  const [activeSong, setActiveSong] = useState(null);
 
   useEffect(() => {
     // Fetch the duration of each song
@@ -56,6 +57,10 @@ function SongList({ songs, onSongClick }) {
   const handleSearchIconClick = () => {
     searchInputRef.current.focus(); // Focus the search input when search icon is clicked
   };
+  const handleSongClick = (song) => {
+    setActiveSong(song.id); // Set the active song ID
+    onSongClick(song); // Trigger the original click handler
+  };
 
   return (
     <div className="song-list-container">
@@ -98,10 +103,17 @@ function SongList({ songs, onSongClick }) {
       {/* Song list */}
       {filteredSongs.length > 0 ? (
         filteredSongs.map((song) => (
+          // <div
+          //   key={song.id}
+          //   onClick={() => onSongClick(song)}
+          //   className="song-item"
+          // >
           <div
             key={song.id}
-            onClick={() => onSongClick(song)}
-            className="song-item"
+            onClick={() => handleSongClick(song)}
+            className={`song-item ${
+              activeSong === song.id ? "active-song" : ""
+            }`} // Add 'active-song' class if it's active
           >
             <img
               src={`https://cms.samespace.com/assets/${song.cover}`}

@@ -52,6 +52,7 @@
     object-fit: cover;
     /* Ensures images maintain aspect ratio */
     margin-right: 12px;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
 /* Song details container */
@@ -225,4 +226,11 @@
 .fade-out {
     opacity: 0;
     transform: scale(0.8);
+}
+
+.song-item.active-song {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    transform: scale(1.05);
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
