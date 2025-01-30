@@ -1,66 +1,75 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import "../styles/MainSong.css";
 import AudioPlayer from "react-h5-audio-player";
-import "react-h5-audio-player/lib/styles.css"; // Import default styles
-// import { PiDotsThreeCircleFill } from "react-icons/pi";
-// import { PiDotsThreeCircleFill } from "react-icons/pi";
+import "react-h5-audio-player/lib/styles.css";
 import { BiDotsHorizontalRounded } from "react-icons/bi";
 
-function MainSong({ song }) {
-  const [currentTime, setCurrentTime] = useState(0);
+function MainSong({ songs, currentSongIndex, setCurrentSongIndex }) {
   const audioRef = useRef(null);
 
-  useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.currentTime = currentTime;
-    }
-  }, [currentTime]);
+  const handleNext = () => {
+    setCurrentSongIndex((prevIndex) =>
+      prevIndex < songs.length - 1 ? prevIndex + 1 : 0
+    );
+  };
+
+  const handlePrevious = () => {
+    setCurrentSongIndex((prevIndex) =>
+      prevIndex > 0 ? prevIndex - 1 : songs.length - 1
+    );
+  };
+
+  const handleEnd = () => {
+    setCurrentSongIndex((prevIndex) => {
+      const nextIndex = prevIndex < songs.length - 1 ? prevIndex + 1 : 0;
+      return nextIndex;
+    });
+
+    setTimeout(() => {
+      if (audioRef.current) {
+        audioRef.current.audio.current.play();
+      }
+    }, 100);
+  };
 
   return (
     <div className="main-song-wrapper-unique">
       <div className="main-song-container-unique">
-        {song ? (
+        {songs.length > 0 ? (
           <>
             <div className="main-song-details-unique">
               <div className="song-info-unique">
-                <h3 className="song-name-unique">{song.name}</h3>
-                <p className="song-artist-unique">{song.artist}</p>
+                <h3 className="song-name-unique">
+                  {songs[currentSongIndex].name}
+                </h3>
+                <p className="song-artist-unique">
+                  {songs[currentSongIndex].artist}
+                </p>
               </div>
               <img
-                src={`https://cms.samespace.com/assets/${song.cover}`}
-                alt={song.name}
+                src={`https://cms.samespace.com/assets/${songs[currentSongIndex].cover}`}
+                alt={songs[currentSongIndex].name}
                 className="main-song-cover-unique"
               />
             </div>
 
-            {/* Custom Audio Player */}
-            {/* <div className="audio-player-class">
-              <PiDotsThreeCircleFill className="menu-icon" />
-              
-              <AudioPlayer
-                ref={audioRef}
-                src={song.url}
-                onListen={(e) => setCurrentTime(e.target.currentTime)}
-                volume={0.5}
-                showTime={false} // Hide the time display
-                showLoopControl={false} // Disable loop button
-                loop={false} // Ensure loop is disabled
-                controls
-              />
-            </div> */}
+            {/* Audio Player with Next/Previous Functionality */}
             <div className="audio-player-class">
               <div className="menu-icon-wrapper">
                 <BiDotsHorizontalRounded className="menu-icon" />
               </div>
               <AudioPlayer
                 ref={audioRef}
-                src={song.url}
-                onListen={(e) => setCurrentTime(e.target.currentTime)}
+                src={songs[currentSongIndex].url}
                 volume={0.5}
-                showTime={false} // Hide the time display
-                showLoopControl={false} // Disable loop button
-                loop={false} // Ensure loop is disabled
-                controls
+                showTime={false}
+                showLoopControl={false}
+                loop={false}
+                showSkipControls={true} // Enable next/previous buttons
+                onClickNext={handleNext}
+                onClickPrevious={handlePrevious}
+                onEnded={handleEnd} // Auto-play next song
+                customAdditionalControls={[]} // Remove extra controls if needed
               />
             </div>
           </>

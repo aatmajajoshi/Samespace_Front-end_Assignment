@@ -33,8 +33,7 @@ function App() {
   return (
     <div>
       <Home setSongs={setSongs} />
-      <MainPage songs={songs} />{" "}
-      {/* This will handle everything including SongList */}
+      <MainPage songs={songs} />
     </div>
   );
 }

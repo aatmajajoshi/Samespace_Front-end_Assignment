@@ -1,25 +1,22 @@
 import { useState } from "react";
-import { SiSpotify } from "react-icons/si"; // Importing Spotify icon
-import SongList from "../components/SongList"; // Import the SongList component
+import { SiSpotify } from "react-icons/si";
+import SongList from "../components/SongList";
 import MainSong from "../components/MainSong";
-import "../styles/MainPage.css"; // Import the CSS file
+import "../styles/MainPage.css";
 
 function MainPage({ songs }) {
-  const [backgroundColor, setBackgroundColor] = useState("#0f0f0f"); // Default background color
-  const [selectedSong, setSelectedSong] = useState(null); // State to store selected song data
+  const [backgroundColor, setBackgroundColor] = useState("#0f0f0f");
+  const [currentSongIndex, setCurrentSongIndex] = useState(0);
 
-  // Function to handle background color change on song click
-  const handleSongClick = (song) => {
-    setBackgroundColor(song.accent); // Update background color dynamically
-    setSelectedSong(song);
+  const handleSongClick = (index) => {
+    setCurrentSongIndex(index);
+    setBackgroundColor(songs[index]?.accent || "#0f0f0f");
   };
 
   return (
     <div
       className="main-container"
-      style={{
-        backgroundColor: backgroundColor, // Background color updated dynamically
-      }}
+      style={{ backgroundColor: backgroundColor }}
     >
       <header className="header">
         <SiSpotify color="#fff" className="spotify-icon" />
@@ -29,12 +26,16 @@ function MainPage({ songs }) {
         </span>
       </header>
 
-      {/* Pass the handleSongClick function to SongList component */}
-      {/* <SongList songs={songs} onSongClick={handleSongClick} />
-      {selectedSong && <MainSong song={selectedSong} />} */}
       <div className="main-content-container">
         <SongList songs={songs} onSongClick={handleSongClick} />
-        {selectedSong && <MainSong song={selectedSong} />}
+        {songs.length > 0 && (
+          <MainSong
+            song={songs[currentSongIndex]}
+            currentSongIndex={currentSongIndex}
+            setCurrentSongIndex={setCurrentSongIndex}
+            songs={songs}
+          />
+        )}
       </div>
     </div>
   );

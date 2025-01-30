@@ -5,11 +5,11 @@ import { FiSearch } from "react-icons/fi";
 
 function SongList({ songs, onSongClick }) {
   const [durations, setDurations] = useState({});
-  const [showTopTracks, setShowTopTracks] = useState(false); // State to toggle between For You & Top Tracks
+  const [showTopTracks, setShowTopTracks] = useState(false); // Toggle between For You & Top Tracks
   const [searchQuery, setSearchQuery] = useState(""); // Search bar state
   const [showSearchIcon, setShowSearchIcon] = useState(true); // For managing search icon visibility
   const searchInputRef = useRef(null); // Reference to the search input element
-  const [activeSong, setActiveSong] = useState(null);
+  const [activeSongIndex, setActiveSongIndex] = useState(null); // Track active song index
 
   useEffect(() => {
     // Fetch the duration of each song
@@ -24,7 +24,7 @@ function SongList({ songs, onSongClick }) {
     });
   }, [songs]);
 
-  // Convert seconds to a readable format (MM:SS)
+  // Convert seconds to MM:SS format
   const formatDuration = (seconds) => {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = Math.floor(seconds % 60);
@@ -53,18 +53,19 @@ function SongList({ songs, onSongClick }) {
     }, 300); // Matches the CSS transition time
   };
 
-  // Handle search icon click
   const handleSearchIconClick = () => {
     searchInputRef.current.focus(); // Focus the search input when search icon is clicked
   };
-  const handleSongClick = (song) => {
-    setActiveSong(song.id); // Set the active song ID
-    onSongClick(song); // Trigger the original click handler
+
+  // Handle song click: Pass index instead of full song object
+  const handleSongClick = (index) => {
+    setActiveSongIndex(index); // Set the active song index
+    onSongClick(index); // Pass the index to MainPage.js
   };
 
   return (
     <div className="song-list-container">
-      {/* Headings in a single row with click handlers */}
+      {/* Headings to switch between For You & Top Tracks */}
       <div className="headings-container">
         <h2
           className={`section-heading ${!showTopTracks ? "active" : ""}`}
@@ -83,7 +84,7 @@ function SongList({ songs, onSongClick }) {
       {/* Search Bar */}
       <div className="search-container">
         <input
-          ref={searchInputRef} // Assign the ref to the search input
+          ref={searchInputRef}
           type="text"
           placeholder="Search Song, Artist"
           className="search-bar"
@@ -100,20 +101,15 @@ function SongList({ songs, onSongClick }) {
         )}
       </div>
 
-      {/* Song list */}
+      {/* Song List */}
       {filteredSongs.length > 0 ? (
-        filteredSongs.map((song) => (
-          // <div
-          //   key={song.id}
-          //   onClick={() => onSongClick(song)}
-          //   className="song-item"
-          // >
+        filteredSongs.map((song, index) => (
           <div
             key={song.id}
-            onClick={() => handleSongClick(song)}
+            onClick={() => handleSongClick(index)}
             className={`song-item ${
-              activeSong === song.id ? "active-song" : ""
-            }`} // Add 'active-song' class if it's active
+              activeSongIndex === index ? "active-song" : ""
+            }`}
           >
             <img
               src={`https://cms.samespace.com/assets/${song.cover}`}

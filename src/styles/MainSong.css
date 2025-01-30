@@ -93,10 +93,12 @@
 
 .rhap_rewind-button {
   color: rgba(255, 255, 255, 0.7) !important;
+  display: none;
 }
 
 .rhap_forward-button {
   color: rgba(255, 255, 255, 0.7) !important;
+  display: none;
 }
 
 /* Volume bar styling */
