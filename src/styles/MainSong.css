@@ -335,73 +335,7 @@
   }
 }
 
-/* Media query for tablet screens (768px to 1024px) */
-/* @media (min-width: 768px) and (max-width: 1024px) {
-  .main-song-wrapper-unique {
-    max-width: 90%;
-    margin-left: 500px;
-    margin-right: 0;
-    margin-top: 200px;
-  }
 
-  .main-song-container-unique {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    max-height: 10%;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-
-  .main-song-details-unique {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    text-align: center;
-    margin-top: 10px;
-  }
-
-  .song-info-unique {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 15px;
-    width: 100%;
-    margin-top: 20px;
-  }
-
-  .song-name-unique,
-  .song-artist-unique {
-    margin: 0;
-    font-size: 1.6rem;
-  }
-
-  .main-song-cover-unique {
-    width: 300px !important;
-    height: 300px !important;
-    max-width: none !important;
-    max-height: none !important;
-    border-radius: 15px;
-    object-fit: cover;
-    margin-top: 20px;
-  }
-
-  .audio-player-class {
-    width: 80%;
-    max-width: 600px;
-    margin-top: 20px;
-  }
-
-  .rhap_main-controls {
-    align-items: center !important;
-    left: 50px !important;
-    font-size: 25px !important;
-  }
-} */
 @media (min-width: 768px) and (max-width: 1024px) {
   .main-song-wrapper-unique {
     max-width: 90%;
@@ -409,7 +343,6 @@
     margin-right: 0;
     margin-top: 35px;
     height: 100%;
-    /* Allow content to dictate the height */
   }
 
   .main-song-container-unique {
@@ -418,11 +351,9 @@
     align-items: center;
     flex-direction: column;
     max-height: 100% !important;
-    /* Adjust height based on content */
     padding: 20px;
     box-sizing: border-box;
     flex-grow: 1;
-    /* Allow the container to grow and fill available space */
   }
 
   .main-song-details-unique {

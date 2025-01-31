@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import axios from "axios";
-
+// No UI in this component, just fetching data
 function Home({ setSongs }) {
   useEffect(() => {
     axios
@@ -11,7 +11,7 @@ function Home({ setSongs }) {
       .catch((error) => console.error("Error fetching songs:", error));
   }, [setSongs]);
 
-  return null; // No UI in this component, just fetching data
+  return null;
 }
 
 export default Home;

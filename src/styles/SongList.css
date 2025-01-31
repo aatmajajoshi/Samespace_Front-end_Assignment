@@ -1,28 +1,17 @@
 .song-list-container {
     width: 60vh;
-    /* Fixed width */
     height: 95%;
-    /* Full height of the viewport */
     position: absolute;
     left: 300px;
-    /* Adjust position */
     top: 50%;
-    /* Vertically centers the container */
     transform: translateY(-50%);
-    /* Adjusts the position to ensure it's perfectly centered */
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 12px;
-    /* Adds space between song items */
     padding: 10px;
     overflow-y: auto;
     border-radius: 1%;
-
-    /* background-color: rgba(255, 255, 255, 0.05);
-    Light semi-transparent background
-    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5);
-    Subtle shadow for depth */
 }
 
 
@@ -35,13 +24,11 @@
     width: 90%;
     border-radius: 8px;
     transition: transform 0.2s ease-in-out, background 0.3s ease-in-out;
-    /* Smooth transition for hover effects */
 }
 
 .song-item:hover {
     transform: scale(1.05);
     background: rgba(255, 255, 255, 0.2);
-    /* Slight highlight on hover */
 }
 
 /* Song image styling */
@@ -50,7 +37,6 @@
     height: 55px;
     border-radius: 50%;
     object-fit: cover;
-    /* Ensures images maintain aspect ratio */
     margin-right: 12px;
     transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
@@ -79,7 +65,6 @@
     font-weight: bold;
     color: #ffffff;
     letter-spacing: 0.5px;
-    /* Slightly more spaced letters for elegance */
 }
 
 /* Style for artist name */
@@ -88,7 +73,6 @@
     font-weight: 400;
     color: rgba(255, 255, 255, 0.7);
     letter-spacing: 0.3px;
-    /* Slight letter spacing */
 }
 
 /* Style for song duration */
@@ -97,7 +81,6 @@
     color: #fff;
     font-weight: 400;
     margin-left: auto;
-    /* Push the duration to the right */
 }
 
 .song-name,
@@ -106,10 +89,8 @@
 .section-heading,
 .no-songs-message {
     font-family: 'Arial', sans-serif;
-    /* Sans-serif font for clarity */
 }
 
-/* Scrollbar customization for better UX */
 .song-list-container::-webkit-scrollbar {
     width: 6px;
 }
@@ -132,13 +113,7 @@
 }
 
 .section-heading {
-    /* color: white;
-    font-size: 22px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s ease; */
     color: rgba(255, 255, 255, 0.5);
-    /* Default transparent white */
     font-size: 22px;
     font-weight: 550;
     cursor: pointer;
@@ -146,13 +121,10 @@
 }
 
 .section-heading.active {
-    /* color: #1DB954; */
     color: #fff;
-    /* Highlight the active section */
 }
 
 .section-heading:hover {
-    /* color: #1DB954; */
     color: #fff;
 }
 
@@ -170,7 +142,6 @@
     justify-content: space-between;
     width: 90%;
     background: rgba(255, 255, 255, 0.1);
-    /* Transparent background */
     border-radius: 5px;
     padding: 8px 12px;
     margin-bottom: 12px;
@@ -208,9 +179,6 @@
     cursor: pointer;
 }
 
-/* Fade & Scale Animation */
-
-/* Base styles for icons */
 .search-icon,
 .clear-icon {
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
@@ -241,7 +209,6 @@
         display: none;
         position: fixed;
         top: 150px;
-        /* left: -20px; */
         width: 80vw;
         height: 100vh;
         transform: translateX(0);
@@ -256,48 +223,35 @@
 
     .song-list-container {
         width: 90vw;
-        /* Increased width for mobile */
         height: 100vh;
-        /* Full viewport height */
         padding: 20px;
-        /* Increase padding for spacing */
     }
 
-    /* Increase font sizes and adjust song items */
     .song-item {
         padding: 18px;
-        /* Increase padding */
         width: 100%;
-        /* Take up the full width */
     }
 
     .song-image {
         width: 75px;
-        /* Increase image size */
         height: 75px;
-        /* Increase image size */
     }
 
     .song-name {
         font-size: 20px;
-        /* Larger font size */
     }
 
     .song-artist {
         font-size: 16px;
-        /* Larger font size */
     }
 
     .song-duration {
         font-size: 16px;
-        /* Larger font size */
     }
 
     .search-bar {
         font-size: 18px;
-        /* Larger font size */
         padding: 10px;
-        /* Increase padding */
     }
 
     .search-bar::placeholder {
@@ -306,36 +260,29 @@
 
     .search-icon {
         font-size: 30px;
-        /* Larger search icon */
     }
 
     .clear-icon {
         font-size: 30px;
-        /* Larger clear icon */
     }
 
     .section-heading {
         font-size: 24px;
-        /* Increase section heading size */
     }
 
     .no-songs-message {
         font-size: 22px;
-        /* Increase font size for no songs message */
     }
 
     .headings-container {
         gap: 30px;
-        /* Increase gap between headings */
     }
 
     .search-container {
         padding: 12px 15px;
         width: 100%;
-        /* Increase padding for search container */
     }
 
-    /* Ensure the song list container appears correctly on mobile */
     .song-list-container.visible {
         display: block;
     }
@@ -343,46 +290,44 @@
     .song-item:hover {
         transform: scale(1.05);
         background: rgba(255, 255, 255, 0.2);
-        /* Slight highlight on hover */
     }
 }
 
 /* Tablet screens (768px - 1024px) */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .song-list-container {
-        width: 40vw; /* Reduce the width */
-        left: 70px; /* Shift it to the left */
-        /* Optional: Adjust position if needed */
-        padding: 15px; /* Adjust padding for better spacing */
+        width: 40vw;
+        left: 70px;
+        padding: 15px;
         top: 350px;
         height: 80vh;
     }
 
     .song-item {
-        padding: 15px; /* Adjust padding for song items */
-        width: 90%; /* Keep the song items' width relative to the container */
+        padding: 15px;
+        width: 90%;
     }
 
     .song-image {
-        width: 50px; /* Adjust image size */
-        height: 50px; /* Adjust image size */
+        width: 50px;
+        height: 50px;
     }
 
     .song-name {
-        font-size: 16px; /* Adjust font size for song name */
+        font-size: 16px;
     }
 
     .song-artist {
-        font-size: 13px; /* Adjust font size for artist */
+        font-size: 13px;
     }
 
     .song-duration {
-        font-size: 13px; /* Adjust font size for duration */
+        font-size: 13px;
     }
 
     .search-bar {
-        font-size: 16px; /* Adjust font size */
-        padding: 8px; /* Adjust padding */
+        font-size: 16px;
+        padding: 8px;
     }
 
     .search-bar::placeholder {
@@ -390,27 +335,27 @@
     }
 
     .search-icon {
-        font-size: 23px; /* Adjust search icon size */
+        font-size: 23px;
     }
 
     .clear-icon {
-        font-size: 25px; /* Adjust clear icon size */
+        font-size: 25px;
     }
 
     .section-heading {
-        font-size: 19px; /* Adjust heading font size */
+        font-size: 19px;
     }
 
     .no-songs-message {
-        font-size: 20px; /* Adjust font size for no songs message */
+        font-size: 20px;
     }
 
     .headings-container {
-        gap: 25px; /* Adjust gap between headings */
+        gap: 25px;
     }
 
     .search-container {
         padding: 10px 12px;
-        width: 100%; /* Ensure the search container spans the full width */
+        width: 100%;
     }
 }
