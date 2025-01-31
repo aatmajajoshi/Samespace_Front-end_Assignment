@@ -17,16 +17,6 @@ This is a **React.js** based music player built as part of a front-end assessmen
 - 🔄 **Tab Navigation** (e.g., "For You" to "Top Tracks")
 - 🎚 **Music Seeker** - Control playback position
 
-## API Used
-The application retrieves song data from:
-```plaintext
-https://cms.samespace.com/items/songs
-```
-- Cover images are loaded using:
-```plaintext
-https://cms.samespace.com/assets/{COVER_IMAGE_ID}
-```
-
 ## Installation & Setup
 ### Prerequisites
 - **Node.js** (v16+ recommended)
@@ -54,25 +44,11 @@ The project is deployed on **Netlify**. You can access it here:
 
 ## Tech Stack
 - **React.js** - Front-end framework
-- **CSS3 / SCSS** - Styling and animations
+- **CSS3** - Styling and animations
 - **REST API** - Fetching dynamic song data
 - **React Audio Player** - Handling music playback
 
-## Project Structure
-```plaintext
-/music-player
-├── src
-│   ├── components     # UI components
-│   ├── pages          # Main pages
-│   ├── assets         # Static assets (icons, images, etc.)
-│   ├── styles         # Global and component-specific styles
-│   ├── utils          # Helper functions
-│   ├── App.js         # Main application entry
-│   ├── index.js       # Root file
-├── public             # Static public assets
-├── package.json       # Dependencies and scripts
-├── README.md          # Project documentation
-```
+
 
 ## Future Improvements
 - 🔹 **Dark Mode Support**
