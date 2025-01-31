@@ -309,9 +309,9 @@
 
   /* ✅ Fix Cover Image Not Growing */
   .main-song-cover-unique {
-    width: 500px !important;
+    width: 350px !important;
     /* Ensure larger width */
-    height: 500px !important;
+    height: 350px !important;
     /* Ensure taller height */
     max-width: none !important;
     /* Remove any restrictions */
@@ -324,14 +324,24 @@
   /* --- Responsive Audio Player --- */
   .audio-player-class {
     width: 90%;
-    max-width: 620px;
-    margin-top: 380px;
+    max-width: 420px;
+    margin-top: 250px;
   }
 
   .rhap_main-controls {
     align-items: center !important;
-    left: 150px !important;
+    left: 80px !important;
     font-size: 30px !important;
+  }
+
+  .rhap_volume-bar {
+    display: none;
+  }
+  .rhap_volume-bar-area {
+    display: none;
+  }
+  .rhap_volume-button {
+    margin-left: 80px !important;
   }
 }
 
@@ -395,7 +405,7 @@
   .audio-player-class {
     width: 80%;
     max-width: 600px;
-    margin-top: 20px;
+    margin-top: 20px; 
   }
 
   .rhap_main-controls {
