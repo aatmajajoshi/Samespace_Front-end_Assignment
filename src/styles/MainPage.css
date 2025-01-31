@@ -57,14 +57,13 @@
     html,
     body {
         overflow: hidden;
-        /* Prevents scrolling */
         width: 100vw;
         height: 100vh;
     }
 
     .main-container {
         width: 100vw;
-        height: 100vh;
+        height: 100%;
         overflow: hidden;
         position: relative;
     }
@@ -75,11 +74,11 @@
         overflow: hidden;
         display: flex;
         flex-direction: column;
+
     }
 
     .header {
         justify-content: flex-start;
-        /* Align header content to the start */
         padding: 10px;
         display: flex;
         gap: 3px;
@@ -87,25 +86,19 @@
     }
 
     .spotify-icon {
-        width: 120px;
-        /* Increase size of the icon */
-        height: 40px;
-        /* Adjust height to match icon size */
+        width: 100px;
+        height: 32px;
         margin-top: 25px;
-        /* Add top margin for spacing */
         margin-left: 20px;
-        /* Add left margin to create some space from the edge */
     }
 
     .spotify-text {
-        font-size: 27px;
-        /* Increase font size for better visibility */
+        font-size: 23px;
         color: #fff;
     }
 
     .spotify-sup {
         font-size: 12px;
-        /* Slightly increase the superscript font size */
     }
 }
 

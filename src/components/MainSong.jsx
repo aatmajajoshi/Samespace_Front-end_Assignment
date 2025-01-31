@@ -9,7 +9,7 @@ function MainSong({
   currentSongIndex,
   setCurrentSongIndex,
   setBackgroundColor,
-  toggleSongList, // Function to show/hide SongList
+  toggleSongList,
 }) {
   const audioRef = useRef(null);
 
@@ -17,20 +17,20 @@ function MainSong({
     setCurrentSongIndex((prevIndex) =>
       prevIndex < songs.length - 1 ? prevIndex + 1 : 0
     );
-    setBackgroundColor(songs[currentSongIndex]?.accent || "#0f0f0f"); // Update background color
+    setBackgroundColor(songs[currentSongIndex]?.accent || "#0f0f0f");
   };
 
   const handlePrevious = () => {
     setCurrentSongIndex((prevIndex) =>
       prevIndex > 0 ? prevIndex - 1 : songs.length - 1
     );
-    setBackgroundColor(songs[currentSongIndex]?.accent || "#0f0f0f"); // Update background color
+    setBackgroundColor(songs[currentSongIndex]?.accent || "#0f0f0f");
   };
 
   const handleEnd = () => {
     setCurrentSongIndex((prevIndex) => {
       const nextIndex = prevIndex < songs.length - 1 ? prevIndex + 1 : 0;
-      setBackgroundColor(songs[nextIndex]?.accent || "#0f0f0f"); // Update background color when song ends
+      setBackgroundColor(songs[nextIndex]?.accent || "#0f0f0f");
       return nextIndex;
     });
 
@@ -62,7 +62,6 @@ function MainSong({
               />
             </div>
 
-            {/* Audio Player with Next/Previous Functionality */}
             <div className="audio-player-class">
               <div className="menu-icon-wrapper" onClick={toggleSongList}>
                 <BiDotsHorizontalRounded className="menu-icon" />
@@ -74,11 +73,11 @@ function MainSong({
                 showTime={false}
                 showLoopControl={false}
                 loop={false}
-                showSkipControls={true} // Enable next/previous buttons
+                showSkipControls={true}
                 onClickNext={handleNext}
                 onClickPrevious={handlePrevious}
-                onEnded={handleEnd} // Auto-play next song
-                customAdditionalControls={[]} // Remove extra controls if needed
+                onEnded={handleEnd}
+                customAdditionalControls={[]}
               />
             </div>
           </>
