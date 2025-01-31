@@ -234,3 +234,25 @@
     transform: scale(1.05);
     transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
+
+/* Hide SongList on mobile screens */
+@media screen and (max-width: 767px) {
+    .song-list-container {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        top: 200px;
+        width: 550px;
+        height: 100vh;
+        left: 55%;
+        /* Move it to the center */
+        transform: translateX(-50%);
+        /* Center align */
+        transition: transform 0.3s ease-in-out;
+        /* Smooth animation */
+    }
+
+    .song-list-container.visible {
+        display: block;
+    }
+}

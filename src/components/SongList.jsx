@@ -3,7 +3,7 @@ import "../styles/SongList.css"; // Import the CSS for SongList
 import { FaTimes } from "react-icons/fa"; // Import cross icon
 import { FiSearch } from "react-icons/fi";
 
-function SongList({ songs, onSongClick, currentSongIndex }) {
+function SongList({ songs, onSongClick, currentSongIndex, isVisible }) {
   const [durations, setDurations] = useState({});
   const [showTopTracks, setShowTopTracks] = useState(false); // Toggle between For You & Top Tracks
   const [searchQuery, setSearchQuery] = useState(""); // Search bar state
@@ -67,7 +67,8 @@ function SongList({ songs, onSongClick, currentSongIndex }) {
   };
 
   return (
-    <div className="song-list-container">
+    // <div className="song-list-container">
+    <div className={`song-list-container ${isVisible ? "visible" : "hidden"}`}>
       {/* Headings to switch between For You & Top Tracks */}
       <div className="headings-container">
         <h2

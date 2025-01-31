@@ -50,3 +50,113 @@
 .spotify-sup {
     font-size: 10px;
 }
+
+/* Tablet screens (768px - 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+    html,
+    body {
+        overflow: hidden;
+        /* Prevents scrolling */
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .main-container {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .main-content-container {
+        flex: 1;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header {
+        justify-content: flex-start;
+        /* Align header content to the start */
+        padding: 10px;
+        display: flex;
+        gap: 3px;
+        width: 100%;
+    }
+
+    .spotify-icon {
+        width: 120px;
+        /* Increase size of the icon */
+        height: 40px;
+        /* Adjust height to match icon size */
+        margin-top: 25px;
+        /* Add top margin for spacing */
+        margin-left: 20px;
+        /* Add left margin to create some space from the edge */
+    }
+
+    .spotify-text {
+        font-size: 27px;
+        /* Increase font size for better visibility */
+        color: #fff;
+    }
+
+    .spotify-sup {
+        font-size: 12px;
+        /* Slightly increase the superscript font size */
+    }
+}
+
+/* Mobile screens (below 768px) */
+@media screen and (max-width: 767px) {
+
+    html,
+    body {
+        overflow: hidden;
+        /* Prevents scrolling */
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .main-container {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .main-content-container {
+        flex: 1;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header {
+        justify-content: center;
+        /* Center-align header content */
+        width: 100%;
+        /* Ensure it takes full width */
+    }
+
+    .spotify-icon {
+        width: 120px;
+        /* Increase size of the icon */
+        height: 40px;
+        /* Adjust height to match icon size */
+    }
+
+    .spotify-text {
+        font-size: 30px;
+        /* Increase font size for better visibility */
+        color: #fff;
+    }
+
+    .spotify-sup {
+        font-size: 12px;
+        /* Slightly increase the superscript font size */
+    }
+}

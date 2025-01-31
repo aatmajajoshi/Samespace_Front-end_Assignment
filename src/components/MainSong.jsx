@@ -9,6 +9,7 @@ function MainSong({
   currentSongIndex,
   setCurrentSongIndex,
   setBackgroundColor,
+  toggleSongList, // Function to show/hide SongList
 }) {
   const audioRef = useRef(null);
 
@@ -63,7 +64,7 @@ function MainSong({
 
             {/* Audio Player with Next/Previous Functionality */}
             <div className="audio-player-class">
-              <div className="menu-icon-wrapper">
+              <div className="menu-icon-wrapper" onClick={toggleSongList}>
                 <BiDotsHorizontalRounded className="menu-icon" />
               </div>
               <AudioPlayer

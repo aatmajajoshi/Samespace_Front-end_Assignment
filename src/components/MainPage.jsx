@@ -7,10 +7,15 @@ import "../styles/MainPage.css";
 function MainPage({ songs }) {
   const [backgroundColor, setBackgroundColor] = useState("#0f0f0f");
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
+  const [isSongListVisible, setIsSongListVisible] = useState(false);
 
   const handleSongClick = (index) => {
     setCurrentSongIndex(index);
     setBackgroundColor(songs[index]?.accent || "#0f0f0f");
+  };
+
+  const toggleSongList = () => {
+    setIsSongListVisible((prev) => !prev);
   };
 
   return (
@@ -30,15 +35,17 @@ function MainPage({ songs }) {
         <SongList
           songs={songs}
           onSongClick={handleSongClick}
-          currentSongIndex={currentSongIndex}  // Pass current song index to SongList
+          currentSongIndex={currentSongIndex} // Pass current song index to SongList
+          isVisible={isSongListVisible} // Pass visibility state
         />
         {songs.length > 0 && (
           <MainSong
             song={songs[currentSongIndex]}
             currentSongIndex={currentSongIndex}
             setCurrentSongIndex={setCurrentSongIndex}
-            setBackgroundColor={setBackgroundColor}  // Pass setBackgroundColor to MainSong
+            setBackgroundColor={setBackgroundColor} // Pass setBackgroundColor to MainSong
             songs={songs}
+            toggleSongList={toggleSongList} // Pass the function to toggle SongList
           />
         )}
       </div>
